@@ -1,0 +1,141 @@
+﻿@model sem3.Areas.Admin.Models.Login
+@{
+    Layout = null;
+}
+
+<!doctype html>
+<html lang="en">
+
+
+<!-- Mirrored from codervent.com/dashtreme/demo/vertical/auth-cover-signin.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 21 Jun 2023 10:08:41 GMT -->
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--favicon-->
+	<link rel="icon" href="~/template/images/favicon-32x32.png" type="image/png" />
+	<!--plugins-->
+	<link href="~/template/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
+	<link href="~/template/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
+	<link href="~/template/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet" />
+	<!-- loader-->
+	
+	<!-- Bootstrap CSS -->
+	<link href="~/template/css/bootstrap.min.css" rel="stylesheet">
+	<link href="~/template/css/bootstrap-extended.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&amp;display=swap" rel="stylesheet">
+	<link href="~/template/css/app.css" rel="stylesheet">
+	<link href="~/template/css/icons.css" rel="stylesheet">
+	<title>Dashtreme - Multipurpose Bootstrap5 Admin Template</title>
+</head>
+
+<body class="bg-theme bg-theme1">
+	<!--wrapper-->
+	<div class="wrapper">
+		<div class="section-authentication-cover">
+			<div class="">
+				<div class="row g-0">
+
+					<div class="col-12 col-xl-7 col-xxl-8 auth-cover-left align-items-center justify-content-center d-none d-xl-flex">
+
+						<div class="card shadow-none bg-transparent shadow-none rounded-0 mb-0">
+							<div class="card-body">
+								<img src="~/template/images/login-images/login-cover.svg" class="img-fluid auth-img-cover-login" width="650" alt="" />
+							</div>
+						</div>
+
+					</div>
+
+					<div class="col-12 col-xl-5 col-xxl-4 auth-cover-right bg-light align-items-center justify-content-center">
+						<div class="card rounded-0 m-3 shadow-none bg-transparent mb-0">
+							<div class="card-body p-sm-5">
+								<div class="">
+									<div class="mb-3 text-center">
+										<img src="~/template/images/logo-icon.png" width="60" alt="">
+									</div>
+									<div class="text-center mb-4">
+										<h5 class="">Dashtrans Admin</h5>
+										<p class="mb-0">Please log in to your account</p>
+									</div>
+									<div class="form-body">
+										<form class="row g-3" action="Login" method="post">
+											<div class="col-12">
+												<input type="email" asp-for="Email" class="form-control" placeholder="Email">
+												<span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+												<span asp-validation-for="Email"></span>
+											</div>
+											<div class="col-12">
+												<input type="password" asp-for="Password" class="form-control" placeholder="Password">
+												<span class="glyphicon glyphicon-lock form-control-feedback"></span>
+												<span asp-validation-for="Password"></span>
+											</div>
+											
+											<div class="col-12">
+												<div class="d-grid">
+													<button type="submit" class="btn btn-light">Sign in</button>
+												</div>
+											</div>
+											
+										</form>
+									</div>
+								
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<!--end row-->
+			</div>
+		</div>
+	</div>
+	<!--end wrapper-->
+	<!--start switcher-->
+	<div class="switcher-wrapper">
+		<div class="switcher-btn">
+			<i class='bx bx-cog bx-spin'></i>
+		</div>
+		<div class="switcher-body">
+			<div class="d-flex align-items-center">
+				<h5 class="mb-0 text-uppercase">Theme Customizer</h5>
+				<button type="button" class="btn-close ms-auto close-switcher" aria-label="Close"></button>
+			</div>
+			<hr />
+			<p class="mb-0">Gaussian Texture</p>
+			<hr>
+
+			<ul class="switcher">
+				<li id="theme1"></li>
+				<li id="theme2"></li>
+				<li id="theme3"></li>
+				<li id="theme4"></li>
+				<li id="theme5"></li>
+				<li id="theme6"></li>
+			</ul>
+			<hr>
+			<p class="mb-0">Gradient Background</p>
+			<hr>
+
+			<ul class="switcher">
+				<li id="theme7"></li>
+				<li id="theme8"></li>
+				<li id="theme9"></li>
+				<li id="theme10"></li>
+				<li id="theme11"></li>
+				<li id="theme12"></li>
+				<li id="theme13"></li>
+				<li id="theme14"></li>
+				<li id="theme15"></li>
+			</ul>
+		</div>
+	</div>
+	<!--end switcher-->
+	<!--plugins-->
+	<script src="~/template/js/jquery.min.js"></script>
+	<!--Password show & hide js -->
+	
+</body>
+
+
+<!-- Mirrored from codervent.com/dashtreme/demo/vertical/auth-cover-signin.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 21 Jun 2023 10:08:41 GMT -->
+</html>
