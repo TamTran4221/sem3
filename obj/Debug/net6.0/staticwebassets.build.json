@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "FmAM6r0AasVPdRUzumfVsAR86OgnpTh2bCW37kiGXwQ=",
+  "Hash": "syjSod4AUqhJ3VtPU1lmREpNG1K7gJzbfBbHn2xQB+4=",
   "Source": "sem3",
   "BasePath": "_content/sem3",
   "Mode": "Default",
@@ -20160,6 +20160,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\template\\plugins\\vectormap\\jvectormap.custom.js"
+    },
+    {
+      "Identity": "C:\\Users\\trant\\OneDrive\\Documents\\Project\\sem3\\sem3\\wwwroot\\uploads\\353058435_640656511428396_6126120012631283453_n.jpg",
+      "SourceId": "sem3",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\trant\\OneDrive\\Documents\\Project\\sem3\\sem3\\wwwroot\\",
+      "BasePath": "_content/sem3",
+      "RelativePath": "uploads/353058435_640656511428396_6126120012631283453_n.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\353058435_640656511428396_6126120012631283453_n.jpg"
     },
     {
       "Identity": "C:\\Users\\trant\\OneDrive\\Documents\\Project\\sem3\\sem3\\wwwroot\\uploads\\354063273_1978705752528479_3757350641981464435_n.jpg",

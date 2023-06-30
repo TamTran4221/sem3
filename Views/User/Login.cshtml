@@ -1,4 +1,4 @@
-﻿
+﻿@model sem3.Areas.Admin.Models.Login;
 @{
     ViewData["Title"] = "Login";
 }
@@ -32,14 +32,15 @@
                 </a>
                 <p>Don't have an account yet? <a asp-controller="User" asp-action="Register">Sign Up</a></p>
             </div>
-            <form>
+            <form action="/User/Login" method="post">
                 <div class="mb-3">
                     <label class="form-label">E-mail</label>
-                    <input type="email" class="form-control">
+                    <input asp-for="Email" type="email" class="form-control">
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Password</label>
-                    <input type="password" class="form-control">
+                    <input asp-for="Password" type="password" class="form-control">
+                    
                 </div>
                 <div class="mb-3">
                     <a href="forgot-password.html">Forgot Password</a>
