@@ -3,13 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using sem3.Data;
 using sem3.Models;
-using X.PagedList;
 
 namespace sem3.Areas.Admin.Controllers
 {
@@ -24,14 +21,13 @@ namespace sem3.Areas.Admin.Controllers
         }
 
         // GET: Admin/Product
-        public async Task<IActionResult> Index(string key, int page = 1)
+        public async Task<IActionResult> Index()
         {
-			int limit = 50;
-			
-			var appDbContext = _context.Products.Include(p => p.Id);
+            int limit = 5;
 
-			return View(await appDbContext.ToPagedListAsync(page, limit));
-		}
+            return View(await _context.Products.ToListAsync());
+        }
+
 
         // GET: Admin/Product/Details/5
         public async Task<IActionResult> Details(int? id)

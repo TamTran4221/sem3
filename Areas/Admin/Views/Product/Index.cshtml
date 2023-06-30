@@ -1,6 +1,5 @@
-﻿@model X.PagedList.IPagedList<sem3.Models.Product>
-@using X.PagedList.Mvc.Core;
-
+﻿
+@model IEnumerable<sem3.Models.Product>
 @{
     ViewData["Title"] = "List Product";
 }
@@ -65,7 +64,7 @@
 						
 					</table>
 				</div>
-				@Html.PagedListPager(Model, page => Url.Action("Index", new { page = page}))
+				
 			</div>
 		</div>
 	</div>
