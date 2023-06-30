@@ -1,4 +1,4 @@
-﻿
+﻿@model sem3.Models.User;
 @{
     ViewData["Title"] = "Register";
 }
@@ -32,19 +32,28 @@
                 </a>
                 <p>Create a new account</p>
             </div>
-            <form>
+            <form action="Register" method="post">
                 <div class="mb-3">
-                    <label class="form-label">E-mail</label>
-                    <input type="email" class="form-control">
+                    <label class="form-label">Name</label>
+                    <input asp-for="Name" type="text" class="form-control" placeholder="Enter Name">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Email</label>
+                    <input asp-for="Email" type="email" class="form-control" placeholder="Enter Email">
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Password</label>
-                    <input type="password" class="form-control">
+                    <input asp-for="Password" type="password" class="form-control" placeholder="Enter Password">
                 </div>
                 <div class="mb-3">
-                    <label class="form-label">Confirm Password</label>
-                    <input type="password" class="form-control">
+                    <label class="form-label">Phone</label>
+                    <input asp-for="Phone" type="text" class="form-control" placeholder="Enter Phone Number">
                 </div>
+                <div class="mb-3">
+                    <label class="form-label">Address</label>
+                    <input asp-for="Address" type="text" class="form-control" placeholder="Enter Address">
+                </div>
+                
                 <button type="submit" class="btn btn-primary">Sign Up</button>
             </form>
             <div class="foot">
