@@ -4505,6 +4505,14 @@
       "PackagePath": "staticwebassets\\uploads\\354063273_1978705752528479_3757350641981464435_n.jpg"
     },
     {
+      "Id": "C:\\Users\\trant\\OneDrive\\Documents\\Project\\sem3\\sem3\\wwwroot\\uploads\\bao-dong-1-4-gioi-tre-nghien-dien-thoai-nhu-nghien-thuoc-phien.jpg",
+      "PackagePath": "staticwebassets\\uploads\\bao-dong-1-4-gioi-tre-nghien-dien-thoai-nhu-nghien-thuoc-phien.jpg"
+    },
+    {
+      "Id": "C:\\Users\\trant\\OneDrive\\Documents\\Project\\sem3\\sem3\\wwwroot\\uploads\\da8c871b96a95cda7ba792487068577b.jpg",
+      "PackagePath": "staticwebassets\\uploads\\da8c871b96a95cda7ba792487068577b.jpg"
+    },
+    {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.sem3.props",
       "PackagePath": "build\\sem3.props"
     },

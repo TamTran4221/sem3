@@ -16,6 +16,7 @@ namespace sem3.Data
 		public DbSet<Order> Orders { get; set; }
 		public DbSet<OrderDetail> OrdersDetails { get; set; }
 		public DbSet<Cart> Carts { get; set; }
+		public DbSet<Employe> Employes { get; set; }
 
 	}
 }
