@@ -1,4 +1,16 @@
-﻿<!doctype html>
+﻿@using Microsoft.AspNetCore.Http
+@using Newtonsoft.Json
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+@{
+	User acc;
+	string jsonString = HttpContextAccessor.HttpContext.Session.GetString("AppLogin");
+	if (!string.IsNullOrEmpty(jsonString))
+	{
+		acc = JsonConvert.DeserializeObject<User>(jsonString);
+	}
+}
+
+<!doctype html>
 <html lang="zxx" class="theme-light">
 
 <!-- Mirrored from templates.envytheme.com/startp/default/brink-pink-index-3.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 17 Jun 2023 06:13:30 GMT -->
@@ -127,8 +139,9 @@
 
 					<div class="others-option">
 						<a asp-controller="Cart" asp-action="Index" class="cart-wrapper-btn"><i data-feather="shopping-cart"></i><span></span></a>
-						<a asp-controller="Home" asp-action="Contact" class="btn btn-light">Support</a>
-						<a asp-controller="User" asp-action="Login" class="btn btn-primary">Login</a>
+						
+							<a asp-controller="Login" asp-action="Login" class="btn btn-primary">Login</a>
+						
 					</div>
 				</nav>
 			</div>

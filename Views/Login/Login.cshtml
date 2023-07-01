@@ -1,13 +1,13 @@
-﻿@model sem3.Models.User;
+﻿@model sem3.Areas.Admin.Models.Login;
 @{
-    ViewData["Title"] = "Register";
+    ViewData["Title"] = "Login";
 }
 
 <div class="page-title-area">
     <div class="d-table">
         <div class="d-table-cell">
             <div class="container">
-                <h2>Register</h2>
+                <h2>Login</h2>
             </div>
         </div>
     </div>
@@ -22,7 +22,7 @@
     <div class="shape8 rotateme"><img src="~/assets/img/shape2.svg" alt="shape"></div>
 </div>
 <!-- End Page Title -->
-<!-- Start Register Area -->
+<!-- Start Login Area -->
 <div class="ptb-80">
     <div class="container">
         <div class="auth-form">
@@ -30,36 +30,32 @@
                 <a href="index.html">
                     <img src="~/assets/img/logo.png">
                 </a>
-                <p>Create a new account</p>
+                <p>Don't have an account yet? <a asp-controller="Login" asp-action="Register">Sign Up</a></p>
             </div>
-            <form action="Register" method="post">
+            <form action="/Login/Login" method="post">
                 <div class="mb-3">
-                    <label class="form-label">Name</label>
-                    <input asp-for="Name" type="text" class="form-control" placeholder="Enter Name">
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">Email</label>
-                    <input asp-for="Email" type="email" class="form-control" placeholder="Enter Email">
+                    <label class="form-label">E-mail</label>
+                    <input asp-for="Email" type="email" class="form-control">
                 </div>
                 <div class="mb-3">
                     <label class="form-label">Password</label>
-                    <input asp-for="Password" type="password" class="form-control" placeholder="Enter Password">
+                    <input asp-for="Password" type="password" class="form-control">
+
                 </div>
                 <div class="mb-3">
-                    <label class="form-label">Phone</label>
-                    <input asp-for="Phone" type="text" class="form-control" placeholder="Enter Phone Number">
+                    <a href="forgot-password.html">Forgot Password</a>
                 </div>
-                <div class="mb-3">
-                    <label class="form-label">Address</label>
-                    <input asp-for="Address" type="text" class="form-control" placeholder="Enter Address">
-                </div>
-                
-                <button type="submit" class="btn btn-primary">Sign Up</button>
+                <button type="submit" class="btn btn-primary">Login</button>
             </form>
             <div class="foot">
-                <p>Already have an account yet? <a asp-controller="User" asp-action="Login">Login</a></p>
+                <p>Or connect with</p>
+                <ul>
+                    <li><a href="#" class="linkedin" target="_blank"><i data-feather="mail"></i></a></li>
+                    <li><a href="#" class="facebook" target="_blank"><i data-feather="facebook"></i></a></li>
+                    <li><a href="#" class="twitter" target="_blank"><i data-feather="twitter"></i></a></li>
+                </ul>
             </div>
         </div>
     </div>
 </div>
-
+<!-- End Login Area -->

@@ -1,48 +1,46 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using sem3.Areas.Admin.Models;
 using sem3.Data;
 using sem3.Models;
 using System.Security.Cryptography;
-using System.Security.Principal;
 using System.Text;
 
 namespace sem3.Controllers
 {
-    public class UserController : Controller
-    {
+	public class LoginController : Controller
+	{
 		private readonly ApplicationDbContext _context;
-		public UserController(ApplicationDbContext context)
+		public LoginController(ApplicationDbContext context)
 		{
 			_context = context;
 		}
 		public IActionResult Login()
-        {
-            return View();
-        }
+		{
+			return View();
+		}
 		[HttpPost]
-        public IActionResult Login(Login model)
-        {
-            if (ModelState.IsValid)
-            {
-                User acc = _context.Users.FirstOrDefault(a => a.Email.Equals(model.Email) && a.Password.Equals(model.Password));
+		public IActionResult Login(Login model)
+		{
+			if (ModelState.IsValid)
+			{
+				User acc = _context.Users.FirstOrDefault(a => a.Email.Equals(model.Email) && a.Password.Equals(model.Password));
 
-                if (acc != null)
-                {
-                    HttpContext.Session.SetString("AppLogin", JsonConvert.SerializeObject(acc));
-                    return RedirectToAction("Index", "Home");
-                }
-                else
-                {
-                    ModelState.AddModelError("Email", "Tài khoản hoặc mật khẩu không chính xác");
-                }
-            }
-            return View(model);
-        }
-        public IActionResult Register()
-        {
-			
+				if (acc != null)
+				{
+					HttpContext.Session.SetString("AppLogin", JsonConvert.SerializeObject(acc));
+					return RedirectToAction("Index", "Home");
+				}
+				else
+				{
+					ModelState.AddModelError("Email", "Tài khoản hoặc mật khẩu không chính xác");
+				}
+			}
+			return View(model);
+		}
+		public IActionResult Register()
+		{
+
 			return View();
 		}
 		[HttpPost]
@@ -84,10 +82,10 @@ namespace sem3.Controllers
 			}
 			return byte2String;
 		}
-        public IActionResult Logout()
-        {
-            HttpContext.Session.Remove("AdminLogin");
-            return RedirectToAction("Login");
-        }
-    }
+		public IActionResult Logout()
+		{
+			HttpContext.Session.Remove("AdminLogin");
+			return RedirectToAction("Login");
+		}
+	}
 }

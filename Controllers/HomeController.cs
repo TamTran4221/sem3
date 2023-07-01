@@ -1,16 +1,20 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using sem3.Data;
 using sem3.Models;
 using System.Diagnostics;
+using X.PagedList;
 
 namespace sem3.Controllers
 {
 	public class HomeController : Controller
 	{
-		private readonly ILogger<HomeController> _logger;
+		private readonly ILogger<LoginController> _logger;
+		private readonly ApplicationDbContext _context;
 
-		public HomeController(ILogger<HomeController> logger)
+		public HomeController(ILogger<LoginController> logger, ApplicationDbContext context)
 		{
 			_logger = logger;
+            _context = context;
 		}
 
 		public IActionResult Index()
@@ -30,9 +34,12 @@ namespace sem3.Controllers
 		{
 			return View();
 		}
-		public IActionResult Blog()
+		public async Task<IActionResult> Blog(int page = 1)
 		{
-			return View();
+			int limit = 6;
+            var blogs = await _context.Blogs.OrderBy(x => x.Id).ToPagedListAsync(limit, page);
+
+            return View(blogs);
 		}
 		public IActionResult Features()
 		{

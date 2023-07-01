@@ -35,17 +35,20 @@
 	<div class="wrapper">
 		<!--sidebar wrapper -->
 		<div class="sidebar-wrapper" data-simplebar="true">
+			<a asp-controller="Dashboard" asp-action="index">
 			<div class="sidebar-header">
-				<div>
-					<img src="~/template/images/logo-icon.png" class="logo-icon" alt="logo icon">
-				</div>
-				<div>
-					<h4 class="logo-text">Dashtreme</h4>
-				</div>
-				<div class="toggle-icon ms-auto">
-					<i class='bx bx-arrow-back'></i>
-				</div>
+				
+					<div>
+						<img src="~/template/images/logo-icon.png" class="logo-icon" alt="logo icon">
+					</div>
+					<div>
+						<h4 class="logo-text">Dashtreme</h4>
+					</div>
+					<div class="toggle-icon ms-auto">
+						<i class='bx bx-arrow-back'></i>
+					</div>
 			</div>
+			</a>
 			<!--navigation-->
 			<ul class="metismenu" id="menu">
 				<li>
@@ -62,22 +65,34 @@
 						<div class="parent-icon">
 							<i class='bx bx-cart'></i>
 						</div>
-						<div class="menu-title">eCommerce</div>
+						<div class="menu-title">Products</div>
 					</a>
 					<ul>
 						<li>
-							<a asp-controller="Product" asp-action="Index"><i class='bx bx-radio-circle'></i>Products</a>
+							<a asp-controller="Product" asp-action="Index"><i class='bx bx-radio-circle'></i>Product List</a>
 						</li>
 						
 						<li>
-							<a asp-controller="Product" asp-action="Create"><i class='bx bx-radio-circle'></i>Add New Products</a>
-						</li>
-						<li>
-							<a asp-controller="Order" asp-action="Index"><i class='bx bx-radio-circle'></i>Orders</a>
+							<a asp-controller="Product" asp-action="Create"><i class='bx bx-radio-circle'></i>Add New Product</a>
 						</li>
 					</ul>
 				</li>
-				
+				<li>
+					<a href="javascript:;" class="has-arrow">
+						<div class="parent-icon">
+							<i class='bx bx-cart'></i>
+						</div>
+						<div class="menu-title">Blogs</div>
+					</a>
+					<ul>
+						<li>
+							<a asp-controller="Blog" asp-action="Index"><i class='bx bx-radio-circle'></i>Blog List</a>
+						</li>
+						<li>
+							<a asp-controller="Blog" asp-action="Create"><i class='bx bx-radio-circle'></i>Add New Blog</a>
+						</li>
+					</ul>
+				</li>
 				
 			</ul>
 			<!--end navigation-->
