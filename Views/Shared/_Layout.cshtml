@@ -106,9 +106,9 @@
 									<li class="nav-item">
 										<a href="#" class="nav-link">User <i data-feather="chevron-right"></i></a>
 										<ul class="dropdown_menu">
-											<li class="nav-item"><a asp-controller="User" asp-action="Login" class="nav-link">Login</a></li>
+											<li class="nav-item"><a asp-controller="Login" asp-action="Login" class="nav-link">Login</a></li>
 
-											<li class="nav-item"><a asp-controller="User" asp-action="Register" class="nav-link">Register</a></li>
+											<li class="nav-item"><a asp-controller="Login" asp-action="Register" class="nav-link">Register</a></li>
 
 										</ul>
 									</li>
@@ -133,7 +133,7 @@
 
 							</li>
 
-							<li class="nav-item"><a asp-controller="Home" asp-action="Contact" class="nav-link">Contact</a></li>
+							@* <li class="nav-item"><a asp-controller="Home" asp-action="Contact" class="nav-link">Contact</a></li> *@
 						</ul>
 					</div>
 
@@ -161,8 +161,8 @@
 					<div class="option-inner">
 						<div class="others-option">
 							<a asp-controller="Cart" asp-action="Index" class="cart-wrapper-btn"><i data-feather="shopping-cart"></i><span></span></a>
-							<a asp-controller="Home" asp-action="Contact" class="btn btn-light">Support</a>
-							<a asp-controller="User" asp-action="Login" class="btn btn-primary">Login</a>
+							@* <a asp-controller="Home" asp-action="Contact" class="btn btn-light">Support</a> *@
+							<a asp-controller="Login" asp-action="Login" class="btn btn-primary">Login</a>
 						</div>
 					</div>
 				</div>

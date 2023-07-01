@@ -30,10 +30,10 @@ namespace sem3.Controllers
 		{
 			return View();
 		}
-		public IActionResult Contact()
-		{
-			return View();
-		}
+		// public IActionResult Contact()
+		// {
+		// 	return View();
+		// }
 		public async Task<IActionResult> Blog(int page = 1)
 		{
 			int limit = 6;
