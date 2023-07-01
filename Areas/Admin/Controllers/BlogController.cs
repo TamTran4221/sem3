@@ -55,7 +55,7 @@ namespace sem3.Areas.Admin.Controllers
 		// For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public async Task<IActionResult> Create([Bind("Id,Name,Description,Price,SalePrice,Status,Image")] Blog Blog, IFormFile imageFile)
+		public async Task<IActionResult> Create([Bind("Id,Title,Description,SubDescription,Image")] Blog Blog, IFormFile imageFile)
 		{
 			if (ModelState.IsValid)
 			{
@@ -72,7 +72,7 @@ namespace sem3.Areas.Admin.Controllers
 					}
 				}
 
-				_context.Add(Blog);
+				await _context.AddAsync(Blog);
 				await _context.SaveChangesAsync();
 
 				return RedirectToAction(nameof(Index));
@@ -103,25 +103,43 @@ namespace sem3.Areas.Admin.Controllers
 		// For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Description,Price,SalePrice,Status,Image")] Blog Blog, IFormFile imageFile)
+		public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Description,SubDescription,Image")] Blog Blog)
 		{
+			if (id != Blog.Id)
+			{
+				return NotFound();
+			}
+			var files = HttpContext.Request.Form.Files;
 			if (ModelState.IsValid)
 			{
-				if (imageFile != null && imageFile.Length > 0)
+				try
 				{
-					// Lưu ảnh vào thư mục "wwwroot/uploads"
-					var fileName = Path.GetFileName(imageFile.FileName);
-					var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads", fileName);
-
-					using (var stream = new FileStream(filePath, FileMode.Create))
+					if (files.Any() && files[0].Length > 0)
 					{
-						await imageFile.CopyToAsync(stream);
-						Blog.Image = fileName;
+						var file = files[0];
+						var fileName = file.FileName;
+						var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\uploads", fileName);
+
+						using (var stream = new FileStream(path, FileMode.Create))
+						{
+							file.CopyTo(stream);
+							Blog.Image = fileName;
+						}
+					} 
+					_context.Update(Blog);
+					await _context.SaveChangesAsync();
+				}
+				catch (DbUpdateConcurrencyException)
+				{
+					if (!BlogExists(Blog.Id))
+					{
+						return NotFound();
+					}
+					else
+					{
+						throw;
 					}
 				}
-				_context.Add(Blog);
-				await _context.SaveChangesAsync();
-
 				return RedirectToAction(nameof(Index));
 			}
 			return View(Blog);
@@ -130,19 +148,18 @@ namespace sem3.Areas.Admin.Controllers
 		// GET: Admin/Blog/Delete/5
 		public async Task<IActionResult> Delete(int? id)
 		{
-			if (id == null || _context.Blogs == null)
+			if (_context.Blogs == null)
 			{
-				return NotFound();
+				return Problem("Entity set 'ApplicationDbContext.Blogs'  is null.");
+			}
+			var Blog = await _context.Blogs.FindAsync(id);
+			if (Blog != null)
+			{
+				_context.Blogs.Remove(Blog);
 			}
 
-			var Blog = await _context.Blogs
-				.FirstOrDefaultAsync(m => m.Id == id);
-			if (Blog == null)
-			{
-				return NotFound();
-			}
-
-			return View(Blog);
+			await _context.SaveChangesAsync();
+			return RedirectToAction(nameof(Index));
 		}
 
 		// POST: Admin/Blog/Delete/5

@@ -4517,6 +4517,10 @@
       "PackagePath": "staticwebassets\\uploads\\da8c871b96a95cda7ba792487068577b.jpg"
     },
     {
+      "Id": "D:\\sem3\\wwwroot\\uploads\\istockphoto-1152767849-612x612.jpg",
+      "PackagePath": "staticwebassets\\uploads\\istockphoto-1152767849-612x612.jpg"
+    },
+    {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.sem3.props",
       "PackagePath": "build\\sem3.props"
     },

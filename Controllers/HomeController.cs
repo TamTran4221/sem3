@@ -37,7 +37,7 @@ namespace sem3.Controllers
 		public async Task<IActionResult> Blog(int page = 1)
 		{
 			int limit = 6;
-            var blogs = await _context.Blogs.OrderBy(x => x.Id).ToPagedListAsync(limit, page);
+            var blogs = await _context.Blogs.OrderBy(x => x.Id).ToPagedListAsync(page,limit);
 
             return View(blogs);
 		}

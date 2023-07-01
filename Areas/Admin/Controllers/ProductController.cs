@@ -136,19 +136,18 @@ namespace sem3.Areas.Admin.Controllers
         // GET: Admin/Product/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Products == null)
+            if (_context.Products == null)
             {
-                return NotFound();
+                return Problem("Entity set 'ApplicationDbContext.Products'  is null.");
             }
-
-            var product = await _context.Products
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (product == null)
+            var product = await _context.Products.FindAsync(id);
+            if (product != null)
             {
-                return NotFound();
+                _context.Products.Remove(product);
             }
-
-            return View(product);
+            
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
         }
 
         // POST: Admin/Product/Delete/5
