@@ -74,7 +74,7 @@ namespace sem3.Areas.Admin.Controllers
                     }
                 }
 
-                _context.Add(product);
+                _context.Update(product);
                 await _context.SaveChangesAsync();
 
                 return RedirectToAction(nameof(Index));

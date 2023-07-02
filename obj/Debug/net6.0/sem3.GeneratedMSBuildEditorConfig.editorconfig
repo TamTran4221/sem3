@@ -9,213 +9,217 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = sem3
 build_property.RootNamespace = sem3
-build_property.ProjectDir = C:\Users\trant\OneDrive\Documents\Project\sem3\sem3\
+build_property.ProjectDir = C:\Users\Admin\Desktop\ProjectSemIII\sem3\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\trant\OneDrive\Documents\Project\sem3\sem3
+build_property.MSBuildProjectDirectory = C:\Users\Admin\Desktop\ProjectSemIII\sem3
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/trant/OneDrive/Documents/Project/sem3/sem3/Areas/Admin/Views/Account/Login.cshtml]
+[C:/Users/Admin/Desktop/ProjectSemIII/sem3/Areas/Admin/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/trant/OneDrive/Documents/Project/sem3/sem3/Areas/Admin/Views/Blog/Create.cshtml]
+[C:/Users/Admin/Desktop/ProjectSemIII/sem3/Areas/Admin/Views/Blog/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQmxvZ1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/trant/OneDrive/Documents/Project/sem3/sem3/Areas/Admin/Views/Blog/Delete.cshtml]
+[C:/Users/Admin/Desktop/ProjectSemIII/sem3/Areas/Admin/Views/Blog/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQmxvZ1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/trant/OneDrive/Documents/Project/sem3/sem3/Areas/Admin/Views/Blog/Details.cshtml]
+[C:/Users/Admin/Desktop/ProjectSemIII/sem3/Areas/Admin/Views/Blog/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQmxvZ1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/trant/OneDrive/Documents/Project/sem3/sem3/Areas/Admin/Views/Blog/Edit.cshtml]
+[C:/Users/Admin/Desktop/ProjectSemIII/sem3/Areas/Admin/Views/Blog/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQmxvZ1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/trant/OneDrive/Documents/Project/sem3/sem3/Areas/Admin/Views/Blog/Index.cshtml]
+[C:/Users/Admin/Desktop/ProjectSemIII/sem3/Areas/Admin/Views/Blog/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQmxvZ1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/trant/OneDrive/Documents/Project/sem3/sem3/Areas/Admin/Views/Dashboard/Index.cshtml]
+[C:/Users/Admin/Desktop/ProjectSemIII/sem3/Areas/Admin/Views/Dashboard/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRGFzaGJvYXJkXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/trant/OneDrive/Documents/Project/sem3/sem3/Areas/Admin/Views/Order/Create.cshtml]
+[C:/Users/Admin/Desktop/ProjectSemIII/sem3/Areas/Admin/Views/Order/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcT3JkZXJcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/trant/OneDrive/Documents/Project/sem3/sem3/Areas/Admin/Views/Order/Delete.cshtml]
+[C:/Users/Admin/Desktop/ProjectSemIII/sem3/Areas/Admin/Views/Order/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcT3JkZXJcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/trant/OneDrive/Documents/Project/sem3/sem3/Areas/Admin/Views/Order/Details.cshtml]
+[C:/Users/Admin/Desktop/ProjectSemIII/sem3/Areas/Admin/Views/Order/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcT3JkZXJcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/trant/OneDrive/Documents/Project/sem3/sem3/Areas/Admin/Views/Order/Edit.cshtml]
+[C:/Users/Admin/Desktop/ProjectSemIII/sem3/Areas/Admin/Views/Order/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcT3JkZXJcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/trant/OneDrive/Documents/Project/sem3/sem3/Areas/Admin/Views/Order/Index.cshtml]
+[C:/Users/Admin/Desktop/ProjectSemIII/sem3/Areas/Admin/Views/Order/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcT3JkZXJcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/trant/OneDrive/Documents/Project/sem3/sem3/Areas/Admin/Views/Product/Create.cshtml]
+[C:/Users/Admin/Desktop/ProjectSemIII/sem3/Areas/Admin/Views/Product/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJvZHVjdFxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/trant/OneDrive/Documents/Project/sem3/sem3/Areas/Admin/Views/Product/Delete.cshtml]
+[C:/Users/Admin/Desktop/ProjectSemIII/sem3/Areas/Admin/Views/Product/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJvZHVjdFxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/trant/OneDrive/Documents/Project/sem3/sem3/Areas/Admin/Views/Product/Details.cshtml]
+[C:/Users/Admin/Desktop/ProjectSemIII/sem3/Areas/Admin/Views/Product/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJvZHVjdFxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/trant/OneDrive/Documents/Project/sem3/sem3/Areas/Admin/Views/Product/Edit.cshtml]
+[C:/Users/Admin/Desktop/ProjectSemIII/sem3/Areas/Admin/Views/Product/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJvZHVjdFxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/trant/OneDrive/Documents/Project/sem3/sem3/Areas/Admin/Views/Product/Index.cshtml]
+[C:/Users/Admin/Desktop/ProjectSemIII/sem3/Areas/Admin/Views/Product/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJvZHVjdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/trant/OneDrive/Documents/Project/sem3/sem3/Areas/Admin/Views/Service/Create.cshtml]
+[C:/Users/Admin/Desktop/ProjectSemIII/sem3/Areas/Admin/Views/Service/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2VydmljZVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/trant/OneDrive/Documents/Project/sem3/sem3/Areas/Admin/Views/Service/Delete.cshtml]
+[C:/Users/Admin/Desktop/ProjectSemIII/sem3/Areas/Admin/Views/Service/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2VydmljZVxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/trant/OneDrive/Documents/Project/sem3/sem3/Areas/Admin/Views/Service/Details.cshtml]
+[C:/Users/Admin/Desktop/ProjectSemIII/sem3/Areas/Admin/Views/Service/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2VydmljZVxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/trant/OneDrive/Documents/Project/sem3/sem3/Areas/Admin/Views/Service/Edit.cshtml]
+[C:/Users/Admin/Desktop/ProjectSemIII/sem3/Areas/Admin/Views/Service/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2VydmljZVxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/trant/OneDrive/Documents/Project/sem3/sem3/Areas/Admin/Views/Service/Index.cshtml]
+[C:/Users/Admin/Desktop/ProjectSemIII/sem3/Areas/Admin/Views/Service/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2VydmljZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/trant/OneDrive/Documents/Project/sem3/sem3/Areas/Admin/Views/Shared/Admin.cshtml]
+[C:/Users/Admin/Desktop/ProjectSemIII/sem3/Areas/Admin/Views/Shared/Admin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXEFkbWluLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/trant/OneDrive/Documents/Project/sem3/sem3/Areas/Admin/Views/_ViewImports.cshtml]
+[C:/Users/Admin/Desktop/ProjectSemIII/sem3/Areas/Admin/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/trant/OneDrive/Documents/Project/sem3/sem3/Areas/Admin/Views/_ViewStart.cshtml]
+[C:/Users/Admin/Desktop/ProjectSemIII/sem3/Areas/Admin/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/trant/OneDrive/Documents/Project/sem3/sem3/Areas/Identity/Pages/_ViewStart.cshtml]
+[C:/Users/Admin/Desktop/ProjectSemIII/sem3/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/trant/OneDrive/Documents/Project/sem3/sem3/Views/Cart/Index.cshtml]
+[C:/Users/Admin/Desktop/ProjectSemIII/sem3/Views/Cart/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/trant/OneDrive/Documents/Project/sem3/sem3/Views/Home/About.cshtml]
+[C:/Users/Admin/Desktop/ProjectSemIII/sem3/Views/Home/About.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBYm91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/trant/OneDrive/Documents/Project/sem3/sem3/Views/Home/Blog.cshtml]
+[C:/Users/Admin/Desktop/ProjectSemIII/sem3/Views/Home/Blog.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxCbG9nLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/trant/OneDrive/Documents/Project/sem3/sem3/Views/Home/Contact.cshtml]
+[C:/Users/Admin/Desktop/ProjectSemIII/sem3/Views/Home/Contact.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb250YWN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/trant/OneDrive/Documents/Project/sem3/sem3/Views/Home/FAQ.cshtml]
+[C:/Users/Admin/Desktop/ProjectSemIII/sem3/Views/Home/FAQ.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxGQVEuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/trant/OneDrive/Documents/Project/sem3/sem3/Views/Home/Features.cshtml]
+[C:/Users/Admin/Desktop/ProjectSemIII/sem3/Views/Home/Features.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxGZWF0dXJlcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/trant/OneDrive/Documents/Project/sem3/sem3/Views/Home/FeaturesDetails.cshtml]
+[C:/Users/Admin/Desktop/ProjectSemIII/sem3/Views/Home/FeaturesDetails.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxGZWF0dXJlc0RldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/trant/OneDrive/Documents/Project/sem3/sem3/Views/Home/Feedback.cshtml]
+[C:/Users/Admin/Desktop/ProjectSemIII/sem3/Views/Home/Feedback.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxGZWVkYmFjay5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/trant/OneDrive/Documents/Project/sem3/sem3/Views/Home/Index.cshtml]
+[C:/Users/Admin/Desktop/ProjectSemIII/sem3/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/trant/OneDrive/Documents/Project/sem3/sem3/Views/Home/Pricing.cshtml]
+[C:/Users/Admin/Desktop/ProjectSemIII/sem3/Views/Home/Pricing.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcmljaW5nLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/trant/OneDrive/Documents/Project/sem3/sem3/Views/Home/Privacy.cshtml]
+[C:/Users/Admin/Desktop/ProjectSemIII/sem3/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/trant/OneDrive/Documents/Project/sem3/sem3/Views/Home/Product.cshtml]
+[C:/Users/Admin/Desktop/ProjectSemIII/sem3/Views/Home/Product.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcm9kdWN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/trant/OneDrive/Documents/Project/sem3/sem3/Views/Home/ProductDetail.cshtml]
+[C:/Users/Admin/Desktop/ProjectSemIII/sem3/Views/Home/ProductDetail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcm9kdWN0RGV0YWlsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/trant/OneDrive/Documents/Project/sem3/sem3/Views/Home/Project.cshtml]
+[C:/Users/Admin/Desktop/ProjectSemIII/sem3/Views/Home/Project.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcm9qZWN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/trant/OneDrive/Documents/Project/sem3/sem3/Views/Home/Services.cshtml]
+[C:/Users/Admin/Desktop/ProjectSemIII/sem3/Views/Home/Services.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTZXJ2aWNlcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/trant/OneDrive/Documents/Project/sem3/sem3/Views/Home/Team.cshtml]
+[C:/Users/Admin/Desktop/ProjectSemIII/sem3/Views/Home/Team.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUZWFtLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/trant/OneDrive/Documents/Project/sem3/sem3/Views/Home/TermsConditions.cshtml]
+[C:/Users/Admin/Desktop/ProjectSemIII/sem3/Views/Home/TermsConditions.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUZXJtc0NvbmRpdGlvbnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/trant/OneDrive/Documents/Project/sem3/sem3/Views/Shared/Error.cshtml]
+[C:/Users/Admin/Desktop/ProjectSemIII/sem3/Views/Service/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2VydmljZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Admin/Desktop/ProjectSemIII/sem3/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/trant/OneDrive/Documents/Project/sem3/sem3/Views/Shared/_LoginPartial.cshtml]
+[C:/Users/Admin/Desktop/ProjectSemIII/sem3/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/trant/OneDrive/Documents/Project/sem3/sem3/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Admin/Desktop/ProjectSemIII/sem3/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/trant/OneDrive/Documents/Project/sem3/sem3/Views/User/Login.cshtml]
+[C:/Users/Admin/Desktop/ProjectSemIII/sem3/Views/User/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/trant/OneDrive/Documents/Project/sem3/sem3/Views/User/Register.cshtml]
+[C:/Users/Admin/Desktop/ProjectSemIII/sem3/Views/User/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/trant/OneDrive/Documents/Project/sem3/sem3/Views/_ViewImports.cshtml]
+[C:/Users/Admin/Desktop/ProjectSemIII/sem3/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/trant/OneDrive/Documents/Project/sem3/sem3/Views/_ViewStart.cshtml]
+[C:/Users/Admin/Desktop/ProjectSemIII/sem3/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/trant/OneDrive/Documents/Project/sem3/sem3/Views/Shared/_Layout.cshtml]
+[C:/Users/Admin/Desktop/ProjectSemIII/sem3/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-7r8xeda3s7

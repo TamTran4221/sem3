@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using sem3.Data;
 using sem3.Models;
@@ -55,16 +50,31 @@ namespace sem3.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Description,Image,Price")] Service service)
+        public async Task<IActionResult> Create([Bind("Id,Name,Description,Image,Price")] Service service, IFormFile imageFile)
         {
-            if (ModelState.IsValid)
-            {
-                _context.Add(service);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
-            }
-            return View(service);
-        }
+			if (ModelState.IsValid)
+			{
+				if (imageFile != null && imageFile.Length > 0)
+				{
+					// Lưu ảnh vào thư mục "wwwroot/uploads"
+					var fileName = Path.GetFileName(imageFile.FileName);
+					var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads", fileName);
+
+					using (var stream = new FileStream(filePath, FileMode.Create))
+					{
+						await imageFile.CopyToAsync(stream);
+						service.Image = fileName;
+					}
+				}
+
+				_context.Add(service);
+				await _context.SaveChangesAsync();
+
+				return RedirectToAction(nameof(Index));
+			}
+
+			return RedirectToAction(nameof(Index));
+		}
 
         // GET: Admin/Service/Edit/5
         public async Task<IActionResult> Edit(int? id)
@@ -87,35 +97,33 @@ namespace sem3.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Description,Image,Price")] Service service)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Description,Image,Price")] Service service, IFormFile imageFile)
         {
             if (id != service.Id)
             {
                 return NotFound();
             }
+			if (ModelState.IsValid)
+			{
+				if (imageFile != null && imageFile.Length > 0)
+				{
+					// Lưu ảnh vào thư mục "wwwroot/uploads"
+					var fileName = Path.GetFileName(imageFile.FileName);
+					var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads", fileName);
 
-            if (ModelState.IsValid)
-            {
-                try
-                {
-                    _context.Update(service);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!ServiceExists(service.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
-            }
-            return View(service);
-        }
+					using (var stream = new FileStream(filePath, FileMode.Create))
+					{
+						await imageFile.CopyToAsync(stream);
+						service.Image = fileName;
+					}
+				}
+				_context.Update(service);
+				await _context.SaveChangesAsync();
+
+				return RedirectToAction(nameof(Index));
+			}
+			return View(service);
+		}
 
         // GET: Admin/Service/Delete/5
         public async Task<IActionResult> Delete(int? id)
