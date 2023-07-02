@@ -18,15 +18,9 @@ namespace sem3.Controllers
 		// GET: Admin/Service
 		public async Task<IActionResult> Index(int page = 1)
 		{
-			var projectContext = _context.Services.Skip((page - 1) * 9).Take(9);
-			double totalPage = _context.Services.Count() / 9;
-			if (_context.Services.Count() - totalPage * 9 > 0)
-			{
-				totalPage += 1;
-			}
-			ViewBag.TotalPage = totalPage;
-			ViewBag.CurrentPage = page;
-			return View(await projectContext.ToListAsync());
+			int limit = 8;
+            IPagedList<Service> ListServices = await _context.Services.OrderBy(x => x.Id).ToPagedListAsync(page, limit);
+            return View(ListServices);
 		}
 
 		// GET: SeviecController/Details/5
