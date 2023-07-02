@@ -7,11 +7,12 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using sem3.Data;
 using sem3.Models;
+using X.PagedList;
 
 namespace sem3.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    public class UserController : Controller
+    public class UserController : BaseController
     {
         private readonly ApplicationDbContext _context;
 
@@ -21,27 +22,13 @@ namespace sem3.Areas.Admin.Controllers
         }
 
         // GET: Admin/User
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int page = 1)
         {
-              return View(await _context.Users.ToListAsync());
-        }
+            int limit = 10;
 
-        // GET: Admin/User/Details/5
-        public async Task<IActionResult> Details(int? id)
-        {
-            if (id == null || _context.Users == null)
-            {
-                return NotFound();
-            }
+            var users = await _context.Users.OrderBy(c => c.Id).ToPagedListAsync(page, limit);
 
-            var user = await _context.Users
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (user == null)
-            {
-                return NotFound();
-            }
-
-            return View(user);
+            return View(users);
         }
 
         // GET: Admin/User/Create
@@ -57,13 +44,28 @@ namespace sem3.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Name,Email,Password,Address,Phone")] User user)
         {
-            if (ModelState.IsValid)
+            try
             {
-                _context.Add(user);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                User userOld = await _context.Users.Where(x => x.Email == user.Email).FirstOrDefaultAsync();
+                if (userOld != null)
+                {
+                    ModelState.AddModelError("Email", "Email already exists, please enter another email");
+                }
+
+                if (ModelState.IsValid)
+                {
+                    _context.Add(user);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
+                }
+
+                return View(user);
             }
-            return View(user);
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
         }
 
         // GET: Admin/User/Edit/5
@@ -79,6 +81,7 @@ namespace sem3.Areas.Admin.Controllers
             {
                 return NotFound();
             }
+
             return View(user);
         }
 
@@ -112,27 +115,29 @@ namespace sem3.Areas.Admin.Controllers
                         throw;
                     }
                 }
+
                 return RedirectToAction(nameof(Index));
             }
+
             return View(user);
         }
 
         // GET: Admin/User/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Users == null)
+            if (_context.Users == null)
             {
-                return NotFound();
+                return Problem("Entity set 'ApplicationDbContext.Users'  is null.");
             }
 
-            var user = await _context.Users
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (user == null)
+            var user = await _context.Users.FindAsync(id);
+            if (user != null)
             {
-                return NotFound();
+                _context.Users.Remove(user);
             }
 
-            return View(user);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
         }
 
         // POST: Admin/User/Delete/5
@@ -144,19 +149,20 @@ namespace sem3.Areas.Admin.Controllers
             {
                 return Problem("Entity set 'ApplicationDbContext.Users'  is null.");
             }
+
             var user = await _context.Users.FindAsync(id);
             if (user != null)
             {
                 _context.Users.Remove(user);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool UserExists(int id)
         {
-          return _context.Users.Any(e => e.Id == id);
+            return _context.Users.Any(e => e.Id == id);
         }
     }
 }

@@ -43,14 +43,16 @@
                                     <div class="mb-3">
                                         <label asp-for="Title" class="form-label">Blog Title</label>
                                         <input asp-for="Title" type="text" class="form-control" id="inputProductTitle" placeholder="Enter product title">
+                                         <span asp-validation-for="Title" class="text-danger"></span>
                                     </div>
                                     <div class="mb-3">
                                         <label asp-for="Description" class="form-label">Description</label>
-                                        <textarea asp-for="Description" class="form-control" id="inputProductDescription" rows="3"></textarea>
+                                        <textarea asp-for="Description" class="form-control" id="Description" rows="3"></textarea>
+                                         <span asp-validation-for="Description" class="text-danger"></span>
                                     </div>
                                     <div class="mb-3">
                                         <label asp-for="SubDescription" class="form-label">Sub Description</label>
-                                        <textarea asp-for="SubDescription" class="form-control" id="inputProductDescription" rows="3"></textarea>
+                                        <textarea asp-for="SubDescription" class="form-control" id="SubDescription" rows="3"></textarea>
                                     </div>
 
                                     <div class="col-12">

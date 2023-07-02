@@ -25,25 +25,7 @@ namespace sem3.Areas.Admin.Controllers
 
 			return View(Blogs);
 		}
-
-		// GET: Admin/Blog/Details/5
-		public async Task<IActionResult> Details(int? id)
-		{
-			if (id == null || _context.Blogs == null)
-			{
-				return NotFound();
-			}
-
-			var Blog = await _context.Blogs
-				.FirstOrDefaultAsync(m => m.Id == id);
-			if (Blog == null)
-			{
-				return NotFound();
-			} 
-
-			return View(Blog);
-		}
-
+		
 		// GET: Admin/Blog/Create
 		public IActionResult Create()
 		{
@@ -57,6 +39,14 @@ namespace sem3.Areas.Admin.Controllers
 		[ValidateAntiForgeryToken]
 		public async Task<IActionResult> Create([Bind("Id,Title,Description,SubDescription,Image")] Blog Blog, IFormFile imageFile)
 		{
+			if (Blog.Description == null)
+			{
+				ModelState.AddModelError("Description", "Description not null");
+			}
+			if (Blog.Title == null)
+			{
+				ModelState.AddModelError("Description", "Title not null");
+			}
 			if (ModelState.IsValid)
 			{
 				if (imageFile != null && imageFile.Length > 0)
@@ -103,7 +93,7 @@ namespace sem3.Areas.Admin.Controllers
 		// For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
 		[HttpPost]
 		[ValidateAntiForgeryToken]
-		public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Description,SubDescription,Image")] Blog Blog)
+		public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Image,Description,SubDescription,Image")] Blog Blog)
 		{
 			if (id != Blog.Id)
 			{

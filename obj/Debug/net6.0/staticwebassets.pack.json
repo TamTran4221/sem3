@@ -4497,12 +4497,32 @@
       "PackagePath": "staticwebassets\\template\\plugins\\vectormap\\jvectormap.custom.js"
     },
     {
+      "Id": "D:\\sem3\\wwwroot\\uploads\\1.jpg",
+      "PackagePath": "staticwebassets\\uploads\\1.jpg"
+    },
+    {
+      "Id": "D:\\sem3\\wwwroot\\uploads\\2.jpg",
+      "PackagePath": "staticwebassets\\uploads\\2.jpg"
+    },
+    {
       "Id": "D:\\sem3\\wwwroot\\uploads\\353058435_640656511428396_6126120012631283453_n.jpg",
       "PackagePath": "staticwebassets\\uploads\\353058435_640656511428396_6126120012631283453_n.jpg"
     },
     {
       "Id": "D:\\sem3\\wwwroot\\uploads\\354063273_1978705752528479_3757350641981464435_n.jpg",
       "PackagePath": "staticwebassets\\uploads\\354063273_1978705752528479_3757350641981464435_n.jpg"
+    },
+    {
+      "Id": "D:\\sem3\\wwwroot\\uploads\\4.jpg",
+      "PackagePath": "staticwebassets\\uploads\\4.jpg"
+    },
+    {
+      "Id": "D:\\sem3\\wwwroot\\uploads\\7.jpg",
+      "PackagePath": "staticwebassets\\uploads\\7.jpg"
+    },
+    {
+      "Id": "D:\\sem3\\wwwroot\\uploads\\Screenshot 2023-04-18 213450.png",
+      "PackagePath": "staticwebassets\\uploads\\Screenshot 2023-04-18 213450.png"
     },
     {
       "Id": "D:\\sem3\\wwwroot\\uploads\\Screenshot 2023-06-08 130835.png",
@@ -4517,8 +4537,8 @@
       "PackagePath": "staticwebassets\\uploads\\da8c871b96a95cda7ba792487068577b.jpg"
     },
     {
-      "Id": "D:\\sem3\\wwwroot\\uploads\\istockphoto-1152767849-612x612.jpg",
-      "PackagePath": "staticwebassets\\uploads\\istockphoto-1152767849-612x612.jpg"
+      "Id": "D:\\sem3\\wwwroot\\uploads\\services-img5.jpg",
+      "PackagePath": "staticwebassets\\uploads\\services-img5.jpg"
     },
     {
       "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.sem3.props",

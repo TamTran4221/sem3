@@ -1,5 +1,4 @@
 ﻿@model X.PagedList.IPagedList<sem3.Models.Blog>
-@using X.PagedList.Mvc.Core;
 
 @{
     ViewData["Title"] = "Blog";
@@ -32,7 +31,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="single-blog-post-box">
                         <div class="entry-thumbnail">
-                            <a href="#"><img src="~/assets/img/blog-image/9.jpg" alt="image"></a>
+                            <a href="#"><img src="~/uploads/@blog.Image" /></a>
                         </div>
 
                         <div class="entry-post-content">
@@ -43,9 +42,8 @@
                                 </ul>
                             </div>
 
-                            <h3><a href="single-blog.html">Making Peace With The Feast Or Famine Of Freelancing</a></h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod...</p>
-                            <a href="single-blog.html" class="learn-more-btn">Read Story <i data-feather="plus"></i></a>
+                            <h3><a href="single-blog.html">@blog.Description</a></h3>
+                            <p>@blog.SubDescription</p>
                         </div>
                     </div>
                 </div>

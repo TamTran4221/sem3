@@ -1,4 +1,6 @@
-﻿namespace sem3.Models
+﻿using Microsoft.Build.Framework;
+
+namespace sem3.Models
 {
 	public class User
 	{

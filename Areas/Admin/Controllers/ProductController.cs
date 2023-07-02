@@ -109,28 +109,46 @@ namespace sem3.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Description,Price,SalePrice,Status,Image")] Product product, IFormFile imageFile)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Description,Price,SalePrice,Status")] Product product, IFormFile imageFile)
         {
-			if (ModelState.IsValid)
-			{
-				if (imageFile != null && imageFile.Length > 0)
-				{
-					// Lưu ảnh vào thư mục "wwwroot/uploads"
-					var fileName = Path.GetFileName(imageFile.FileName);
-					var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads", fileName);
+            if (id != product.Id)
+            {
+                return NotFound();
+            }
+            var files = HttpContext.Request.Form.Files;
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    if (files.Any() && files[0].Length > 0)
+                    {
+                        var file = files[0];
+                        var fileName = file.FileName;
+                        var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\uploads", fileName);
 
-					using (var stream = new FileStream(filePath, FileMode.Create))
-					{
-						await imageFile.CopyToAsync(stream);
-						product.Image = fileName;
-					}
-				}
-				_context.Add(product);
-				await _context.SaveChangesAsync();
-
-				return RedirectToAction(nameof(Index));
-			}
-			return View(product);
+                        using (var stream = new FileStream(path, FileMode.Create))
+                        {
+                            file.CopyTo(stream);
+                            product.Image = fileName;
+                        }
+                    } 
+                    _context.Update(product);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!ProductExists(product.Id))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            return View(product);
         }
 
         // GET: Admin/Product/Delete/5
