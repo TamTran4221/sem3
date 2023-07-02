@@ -1,45 +1,74 @@
 ﻿@model sem3.Models.Service
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Create Product";
 }
 
-<h1>Create</h1>
+<div class="page-wrapper">
+	<div class="page-content">
 
-<h4>Service</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
-                <input asp-for="Description" class="form-control" />
-                <span asp-validation-for="Description" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Image" class="control-label"></label>
-                <input asp-for="Image" class="form-control" />
-                <span asp-validation-for="Image" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Price" class="control-label"></label>
-                <input asp-for="Price" class="form-control" />
-                <span asp-validation-for="Price" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
+		<!--breadcrumb-->
+		<div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+			<div class="breadcrumb-title pe-3">Service</div>
+			<div class="ps-3">
+				<nav aria-label="breadcrumb">
+					<ol class="breadcrumb mb-0 p-0">
+						<li class="breadcrumb-item">
+							<a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+						</li>
+						<li class="breadcrumb-item active" aria-current="page">Add New Service</li>
+					</ol>
+				</nav>
+			</div>
+			
+		</div>
+		<!--end breadcrumb-->
+
+		<div class="card">
+			<div class="card-body p-4">
+				<h5 class="card-title">Add New Service</h5>
+				<hr />
+				<div class="form-body mt-4">
+					<form asp-action="Create" enctype="multipart/form-data" method="post">
+						<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+						<div class="row">
+							<div class="col-lg-8">
+								<div class="border border-3 p-4 rounded">
+									<div class="mb-3">
+										<label asp-for="Name" class="form-label">Service Title</label>
+										<input asp-for="Name" type="text" class="form-control" id="inputProductTitle" placeholder="Enter service name">
+									</div>
+									<div class="mb-3">
+										<label asp-for="Description" class="form-label">Description</label>
+										<textarea asp-for="Description" class="form-control" id="inputProductDescription" rows="3"></textarea>
+									</div>
+									<div class="mb-3">
+										<label asp-for="Image" class="form-label">Service Images</label>
+										<input asp-for="Image" id="image-uploadify" name="imageFile" type="file" accept=".xlsx,.xls,image/*,.doc,audio/*,.docx,video/*,.ppt,.pptx,.txt,.pdf" multiple>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-4">
+								<div class="border border-3 p-4 rounded">
+									<div class="row g-3">
+										<div class="col-md-6">
+											<label asp-for="Price" class="form-label">Price</label>
+											<input asp-for="Price" type="text" class="form-control" id="inputPrice" placeholder="00.00">
+										</div>
+										<div class="col-12">
+											<div class="d-grid">
+												<button type="submit" class="btn btn-light">Save Service</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div><!--end row-->
+					</form>
+					
+				</div>
+			</div>
+		</div>
+
+	</div>
 </div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
