@@ -1,74 +1,78 @@
 ﻿@model sem3.Models.User
 
 @{
-	ViewData["Title"] = "Create Product";
+    ViewData["Title"] = "Create Product";
 }
 
 <div class="page-wrapper">
-	<div class="page-content">
+    <div class="page-content">
 
-		<!--breadcrumb-->
-		<div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
-			<div class="breadcrumb-title pe-3">eCommerce</div>
-			<div class="ps-3">
-				<nav aria-label="breadcrumb">
-					<ol class="breadcrumb mb-0 p-0">
-						<li class="breadcrumb-item">
-							<a href="javascript:;"><i class="bx bx-home-alt"></i></a>
-						</li>
-						<li class="breadcrumb-item active" aria-current="page">Add New Product</li>
-					</ol>
-				</nav>
-			</div>
+        <!--breadcrumb-->
+        <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+            <div class="breadcrumb-title pe-3">User</div>
+            <div class="ps-3">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb mb-0 p-0">
+                        <li class="breadcrumb-item">
+                            <a href="javascript:;">
+                                <i class="bx bx-home-alt"></i>
+                            </a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">Add New User</li>
+                    </ol>
+                </nav>
+            </div>
 
-		</div>
-		<!--end breadcrumb-->
+        </div>
+        <!--end breadcrumb-->
 
-		<div class="card">
-			<div class="card-body p-4">
-				<h5 class="card-title">Add New Product</h5>
-				<hr />
-				<div class="form-body mt-4">
-					<form asp-action="Create" enctype="multipart/form-data" method="post">
-						<div asp-validation-summary="ModelOnly" class="text-danger"></div>
-						<div class="row">
-							<div class="col-lg-8">
-								<div class="border border-3 p-4 rounded">
-									<div class="mb-3">
-										<label asp-for="Name" class="form-label">Product Title</label>
-										<input asp-for="Name" type="text" class="form-control" id="inputProductTitle" placeholder="Enter product title">
-									</div>
-									<div class="mb-3">
-										<label asp-for="Email" class="form-label">Description</label>
-										<textarea asp-for="Email" class="form-control" id="inputProductDescription" rows="3"></textarea>
-									</div>
-									<div class="mb-3">
-										<label asp-for="Address" class="form-label">Product Images</label>
-										<input asp-for="Address" id="image-uploadify" name="imageFile" type="text">
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-4">
-								<div class="border border-3 p-4 rounded">
-									<div class="row g-3">
-										<div class="col-md-6">
-											<label asp-for="Phone" class="form-label">Price</label>
-											<input asp-for="Phone" type="text" class="form-control" id="inputPrice" placeholder="00.00">
-										</div>
-										<div class="col-12">
-											<div class="d-grid">
-												<button type="submit" class="btn btn-light">Save Product</button>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div><!--end row-->
-					</form>
+        <div class="card">
+            <div class="card-body p-4">
+                <h5 class="card-title">Add New User</h5>
+                <hr/>
+                <div class="form-body mt-4">
+                    <form asp-action="Create" enctype="multipart/form-data" method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <div class="border border-3 p-4 rounded">
+                                    <div class="mb-3">
+                                        <label asp-for="Name" class="form-label">Name</label>
+                                        <input asp-for="Name" type="text" class="form-control" id="inputProductTitle" placeholder="Enter product title">
+                                        <span asp-validation-for="Password"></span>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label asp-for="Email" class="form-label">Email</label>
+                                        <input asp-for="Email" class="form-control" id="inputProductDescription" rows="3"/>
+                                        <span asp-validation-for="Email"></span>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label asp-for="Password" class="form-label">Password</label>
+                                        <input asp-for="Password"  class="form-control" id="Password" name="Password" type="password">
+                                        <span asp-validation-for="Password"></span>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label asp-for="Phone" class="form-label">Phone</label>
+                                        <input asp-for="Phone"  class="form-control" id="Phone" name="Phone" type="text">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label asp-for="Address" class="form-label">Address</label>
+                                        <input asp-for="Address"  class="form-control" id="Address" name="Address" type="text">
+                                    </div>
+                                    
+                                    <div class="col-12">
+                                        <div class="d-grid">
+                                            <button type="submit" class="btn btn-light">Save User</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!--end row-->
+                    </form>
 
-				</div>
-			</div>
-		</div>
+                </div>
+            </div>
+        </div>
 
-	</div>
+    </div>
 </div>

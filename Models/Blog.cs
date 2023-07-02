@@ -1,4 +1,6 @@
-﻿namespace sem3.Models
+﻿using Microsoft.Build.Framework;
+
+namespace sem3.Models
 {
 	public class Blog
 	{
@@ -9,7 +11,5 @@
 		public string SubDescription { get; set; }
 		public DateTime CreatedAt { get; set; }
 		public DateTime UpdateAt { get; set; }
-		public int Userid { get; set; }
-		public User User { get; set; }
 	}
 }

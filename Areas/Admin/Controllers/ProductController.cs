@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc.Rendering;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using sem3.Data;
 using sem3.Models;
 using X.PagedList;
@@ -14,7 +7,7 @@ using X.PagedList;
 namespace sem3.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    public class ProductController : Controller
+    public class ProductController : BaseController
     {
         private readonly ApplicationDbContext _context;
 
@@ -26,11 +19,17 @@ namespace sem3.Areas.Admin.Controllers
         // GET: Admin/Product
         public async Task<IActionResult> Index(string key, int page = 1)
         {
-			int limit = 50;
-			
-			var appDbContext = _context.Products.Include(p => p.Id);
+			int limit = 10;
 
-			return View(await appDbContext.ToPagedListAsync(page, limit));
+			var products = await _context.Products.OrderBy(c => c.Id).ToPagedListAsync(page, limit);
+
+
+			if (!String.IsNullOrEmpty(key))
+			{
+				products = await _context.Products.Where(c => c.Name.Contains(key)).OrderBy(c => c.Id).ToPagedListAsync(page, limit);
+			}
+
+			return View(products);
 		}
 
         // GET: Admin/Product/Details/5
@@ -110,46 +109,63 @@ namespace sem3.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Description,Price,SalePrice,Status,Image")] Product product, IFormFile imageFile)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Description,Price,SalePrice,Status")] Product product, IFormFile imageFile)
         {
-			if (ModelState.IsValid)
-			{
-				if (imageFile != null && imageFile.Length > 0)
-				{
-					// Lưu ảnh vào thư mục "wwwroot/uploads"
-					var fileName = Path.GetFileName(imageFile.FileName);
-					var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads", fileName);
+            if (id != product.Id)
+            {
+                return NotFound();
+            }
+            var files = HttpContext.Request.Form.Files;
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    if (files.Any() && files[0].Length > 0)
+                    {
+                        var file = files[0];
+                        var fileName = file.FileName;
+                        var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\uploads", fileName);
 
-					using (var stream = new FileStream(filePath, FileMode.Create))
-					{
-						await imageFile.CopyToAsync(stream);
-						product.Image = fileName;
-					}
-				}
-				_context.Add(product);
-				await _context.SaveChangesAsync();
-
-				return RedirectToAction(nameof(Index));
-			}
-			return View(product);
+                        using (var stream = new FileStream(path, FileMode.Create))
+                        {
+                            file.CopyTo(stream);
+                            product.Image = fileName;
+                        }
+                    } 
+                    _context.Update(product);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!ProductExists(product.Id))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            return View(product);
         }
 
         // GET: Admin/Product/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null || _context.Products == null)
+            if (_context.Products == null)
             {
-                return NotFound();
+                return Problem("Entity set 'ApplicationDbContext.Products'  is null.");
             }
-
-            var product = await _context.Products
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (product == null)
+            var product = await _context.Products.FindAsync(id);
+            if (product != null)
             {
-                return NotFound();
+                _context.Products.Remove(product);
             }
-
-            return View(product);
+            
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
         }
 
         // POST: Admin/Product/Delete/5

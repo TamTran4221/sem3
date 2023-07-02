@@ -41,5 +41,11 @@ namespace sem3.Areas.Admin.Controllers
 			return View(model);
 
 		}
+
+		public IActionResult Logout()
+		{
+			HttpContext.Session.Remove("AdminLogin");
+			return RedirectToAction("Login");
+		}
 	}
 }

@@ -8,9 +8,13 @@
 
   <ItemGroup>
     <Compile Remove="Areas\Admin\Data\**" />
+    <Compile Remove="Areas\Admin\Pages\**" />
     <Content Remove="Areas\Admin\Data\**" />
+    <Content Remove="Areas\Admin\Pages\**" />
     <EmbeddedResource Remove="Areas\Admin\Data\**" />
+    <EmbeddedResource Remove="Areas\Admin\Pages\**" />
     <None Remove="Areas\Admin\Data\**" />
+    <None Remove="Areas\Admin\Pages\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -24,11 +28,10 @@
     </PackageReference>
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.14" />
     <PackageReference Include="X.PagedList" Version="7.9.0" />
-    <PackageReference Include="X.PagedList.Mvc.Core" Version="7.9.1" />
+    <PackageReference Include="X.PagedList.Mvc.Core" Version="7.5.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Admin\Pages\" />
     <Folder Include="Data\Migrations\" />
     <Folder Include="wwwroot\uploads\" />
   </ItemGroup>
