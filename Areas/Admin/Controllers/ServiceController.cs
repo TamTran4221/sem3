@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using sem3.Data;
 using sem3.Models;
+using X.PagedList;
 
 namespace sem3.Areas.Admin.Controllers
 {
@@ -16,10 +17,20 @@ namespace sem3.Areas.Admin.Controllers
         }
 
         // GET: Admin/Service
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string key, int page = 1)
         {
-              return View(await _context.Services.ToListAsync());
-        }
+			int limit = 10;
+
+			var Services = await _context.Services.OrderBy(c => c.Id).ToPagedListAsync(page, limit);
+
+
+			if (!String.IsNullOrEmpty(key))
+			{
+				Services = await _context.Services.Where(c => c.Name.Contains(key)).OrderBy(c => c.Id).ToPagedListAsync(page, limit);
+			}
+
+			return View(Services);
+		}
 
         // GET: Admin/Service/Details/5
         public async Task<IActionResult> Details(int? id)
