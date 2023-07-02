@@ -24,7 +24,7 @@ namespace sem3.Controllers
 		{
 			if (ModelState.IsValid)
 			{
-				User acc = _context.Users.FirstOrDefault(a => a.Email.Equals(model.Email) && a.Password.Equals(model.Password));
+				User acc = _context.Users.FirstOrDefault(a => a.Email.Equals(model.Email) && a.Password.Equals(GetMD5(model.Password)));
 
 				if (acc != null)
 				{
@@ -55,7 +55,8 @@ namespace sem3.Controllers
 					_context.ChangeTracker.LazyLoadingEnabled = false;
 					_context.Users.Add(user);
 					_context.SaveChanges();
-					return RedirectToAction("Index", "Home");
+					TempData["yes"] = "You are register account success!";
+					return RedirectToAction("Login", "Login");
 				}
 				else
 				{
@@ -84,7 +85,7 @@ namespace sem3.Controllers
 		}
 		public IActionResult Logout()
 		{
-			HttpContext.Session.Remove("AdminLogin");
+			HttpContext.Session.Remove("AppLogin");
 			return RedirectToAction("Login");
 		}
 	}

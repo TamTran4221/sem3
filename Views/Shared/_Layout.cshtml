@@ -153,26 +153,28 @@
                         @* <li class="nav-item"><a asp-controller="Home" asp-action="Contact" class="nav-link">Contact</a></li> *@
                     </ul>
                 </div>
-
-                <div class="others-option">
-
-                    @if (acc == null)
-                    {
+                
+                @if (acc == null)
+                {
+                    <div class="others-option">
                         <a asp-controller="Login" asp-action="Login" class="cart-wrapper-btn">
                             <i data-feather="shopping-cart"></i><span></span>
                         </a>
                         <a asp-controller="Login" asp-action="Login" class="btn btn-primary">Login</a>
-                    }
-                    else
-                    {
-                        <div class="d-flex justify-content-between align-content-center">
+                    </div>
+                }
+                else
+                {
+                    <div class="others-option d-flex align-items-center " style="margin-right: 5px">
+                        <div class="d-flex justify-content-between align-content-center mr-2">
                             <a asp-controller="Cart" asp-action="Index" class="cart-wrapper-btn">
                                 <i data-feather="shopping-cart"></i><span></span>
                             </a>
                             <p>Welcome : @acc.Name</p>
                         </div>
-                    }
-                </div>
+                        <a asp-controller="Login" asp-action="Logout" class="btn btn-primary">Logout</a>
+                    </div>
+                }
             </nav>
         </div>
     </div>

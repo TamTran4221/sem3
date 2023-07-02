@@ -1,6 +1,16 @@
 ﻿@model X.PagedList.IPagedList<sem3.Models.Product>
 @using X.PagedList.Mvc.Core;
-
+@using Microsoft.AspNetCore.Http
+@using Newtonsoft.Json
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+@{
+    string jsonString = HttpContextAccessor.HttpContext.Session.GetString("AppLogin");
+    User acc = null;
+    if (!string.IsNullOrEmpty(jsonString))
+    {
+        acc = JsonConvert.DeserializeObject<User>(jsonString);
+    }
+}
 @{
     ViewData["Title"] = "Product";
 }
@@ -114,7 +124,14 @@
                                     <i class="flaticon-star-1"></i>
                                 </li>
                             </ul>
-                            <a asp-action="Add" asp-controller="Cart" asp-route-id="@item.Id" class="add-to-cart-btn">Add to Cart</a>
+                             @if (acc != null)
+                             {
+                                 <a asp-action="Add" asp-controller="Cart" asp-route-id="@item.Id" class="add-to-cart-btn">Add to Cart</a>
+                             }
+                             else
+                             {
+                                 <a asp-action="Login" asp-controller="Login" class="add-to-cart-btn">Add to Cart</a>
+                             }
                         </div>
                     </div>
                 </div>

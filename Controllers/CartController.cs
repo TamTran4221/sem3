@@ -76,7 +76,7 @@ namespace sem3.Controllers
         public IActionResult Delete(int id)
         {
             User acc = JsonConvert.DeserializeObject<User>(HttpContext.Session.GetString("AppLogin") ?? string.Empty);
-            Cart _cart = _context.Carts.FirstOrDefault(c => c.UserId == acc.Id && c.ProductId == id);
+            Cart _cart = _context.Carts.Where(c => c.UserId == acc.Id && c.ProductId == id).FirstOrDefault();
 
             if (_cart != null)
             {
@@ -101,6 +101,11 @@ namespace sem3.Controllers
             }
             TempData["yes"] = "Cập nhật giỏ hàng thành công";
             return RedirectToAction("Index", "Cart");
+        }
+        
+        public IActionResult Order()
+        {
+            return View();
         }
 
         [HttpPost]

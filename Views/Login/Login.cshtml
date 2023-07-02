@@ -26,6 +26,12 @@
 <div class="ptb-80">
     <div class="container">
         <div class="auth-form">
+        @if (TempData["yes"] != null)
+        {
+            <div class="alert alert-success">
+                @TempData["yes"]
+            </div>
+        }
             <div class="auth-head">
                 <a href="index.html">
                     <img src="~/assets/img/logo.png">

@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Cart";
+    double totalPrice = 0;
 }
 
 <div class="page-title-area">
@@ -27,53 +28,72 @@
 <div class="cart-area ptb-80">
     <div class="container">
         <div class="row">
+             @if (TempData["yes"] != null)
+                    {
+                        <div class="alert alert-success">
+                            @TempData["yes"]
+                        </div>
+                    }
             <div class="col-lg-12 col-md-12">
                 <form>
                     <div class="cart-table table-responsive">
                         <table class="table table-bordered">
                             <thead>
-                                <tr>
-                                    <th scope="col">Product</th>
-                                    <th scope="col">Name</th>
-                                    <th scope="col">Unit Price</th>
-                                    <th scope="col">Quantity</th>
-                                    <th scope="col">Total</th>
-                                </tr>
+                            <tr>
+                                <th scope="col">Product</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Unit Price</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">Total</th>
+                            </tr>
                             </thead>
 
                             <tbody>
-                            @foreach (Cart cart in @Model)
+                            @if (@Model.Count() > 0)
+                            {
+                                @foreach (Cart cart in @Model)
+                                {
+                                    <tr>
+                                        <td class="product-thumbnail">
+                                            <a href="#">
+                                                <img src="~/uploads/@cart.Product.Image" alt="item">
+                                            </a>
+                                        </td>
+
+                                        <td class="product-name">
+                                            <a href="#">@cart.Product.Name</a>
+                                        </td>
+
+                                        <td class="product-price">
+                                            <span class="unit-amount">$@cart.Price.ToString("N")</span>
+                                        </td>
+
+                                        <td class="product-quantity">
+                                            <div class="input-counter">
+                                                <span class="minus-btn"><i data-feather="minus"></i></span>
+                                                <input type="text" min="1" value="1">
+                                                <span class="plus-btn"><i data-feather="plus"></i></span>
+                                            </div>
+                                        </td>
+
+                                        <td class="product-subtotal">
+                                            <span class="subtotal-amount">$@cart.TotalPrice.ToString("N")</span>
+
+                                            <a asp-controller="Cart" asp-action="Delete" asp-route-id="@cart.ProductId" class="remove"><i data-feather="trash-2"></i></a>
+                                        </td>
+                                    </tr>
+                                    totalPrice += cart.TotalPrice;
+                                }
+                            }
+                            else
                             {
                                 <tr>
-                                    <td class="product-thumbnail">
-                                        <a href="#">
-                                            <img src="~/uploads/@cart.Product.Image" alt="item">
-                                        </a>
-                                    </td>
-
-                                    <td class="product-name">
-                                        <a href="#">@cart.Product.Name</a>
-                                    </td>
-
-                                    <td class="product-price">
-                                        <span class="unit-amount">$@cart.Price</span>
-                                    </td>
-
-                                    <td class="product-quantity">
-                                        <div class="input-counter">
-                                            <span class="minus-btn"><i data-feather="minus"></i></span>
-                                            <input type="text" min="1" value="1">
-                                            <span class="plus-btn"><i data-feather="plus"></i></span>
-                                        </div>
-                                    </td>
-
-                                    <td class="product-subtotal">
-                                        <span class="subtotal-amount">$@cart.TotalPrice</span>
-
-                                        <a href="#" class="remove"><i data-feather="trash-2"></i></a>
+                                    <td colspan="6">
+                                    <h3 class="text-center">No Data</h3>
                                     </td>
                                 </tr>
                             }
+
                             </tbody>
                         </table>
                     </div>
@@ -96,11 +116,11 @@
                         <h3>Cart Totals</h3>
 
                         <ul>
-                            <li>Subtotal <span>$250.00</span></li>
-                            <li>Shipping <span>$30.00</span></li>
-                            <li>Total <span><b>$280.00</b></span></li>
+                            <li>Subtotal <span>$ @totalPrice.ToString("N")</span></li>
+                            <li>Shipping <span>$0</span></li>
+                            <li>Total <span><b>$ @Model.Sum(x => x.TotalPrice).ToString("N")</b></span></li>
                         </ul>
-                        <a href="#" class="btn btn-primary">Proceed to Checkout</a>
+                        <a  asp-controller="Cart" asp-action="Order" class="btn btn-primary">Proceed to Checkout</a>
                     </div>
                 </form>
             </div>
