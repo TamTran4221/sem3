@@ -9,7 +9,7 @@
 		public string Phone { get; set; }
 		public string Address { get; set; }
 		public DateTime OrderDate { get; set; }
-		public byte Status { get; set; }
+		public int Status { get; set; }
 		public User User { get; set; }
 	}
 }

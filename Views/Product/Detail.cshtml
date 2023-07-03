@@ -53,10 +53,10 @@
 
                     <div class="availability">
                         Availability: <span>In Stock</span>
-                    </div>ds
+                    </div>
 
-                    <form asp-controller="Cart" asp-action="AddMultiple">
-                        <input type="hidden" value="@Model.Id" name="ProductId">
+                    <form asp-controller="Cart" method="post" asp-action="AddMutiple">
+                        <input type="hidden" value="@Model.Id" name="ProductId" >
                         <div class="quantity d-flex align-items-center">
                             <span>Quantity:</span>
                             <div class="input-counter">

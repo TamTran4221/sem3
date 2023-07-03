@@ -1,8 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Collections.Generic;
+using System.Linq;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using sem3.Data;
 using sem3.Models;
+using sem3.Response;
 
 namespace sem3.Controllers
 {
@@ -47,26 +51,28 @@ namespace sem3.Controllers
             return RedirectToAction("Index", "Cart");
         }
         
-        public IActionResult AddMultiple([FromBody] Cart newCart)
+        [HttpPost]
+        public IActionResult AddMutiple(CartRequest request)
         {
             User acc = JsonConvert.DeserializeObject<User>(HttpContext.Session.GetString("AppLogin") ?? string.Empty);
-            Cart _cart = _context.Carts.FirstOrDefault(c => c.UserId == acc.Id && c.ProductId == newCart.ProductId);
-        
+            Cart _cart = _context.Carts.Where(x => x.UserId == acc.Id && x.ProductId == request.ProductId).FirstOrDefault();
+
             if (_cart != null)
             {
-                _cart.Quantity += newCart.Quantity;
+                _cart.Quantity += request.quantity;
+                _cart.TotalPrice = _cart.Quantity * _cart.Price;
                 _context.Carts.Update(_cart);
                 _context.SaveChanges();
             }
             else
             {
-                Product product = _context.Products.FirstOrDefault(p => p.Id == newCart.ProductId);
+                Product product = _context.Products.FirstOrDefault(p => p.Id == request.ProductId);
                 if (product != null)
                 {
-                    Cart cart = new Cart() { UserId = acc.Id, Price = product.Price, ProductId = product.Id, Quantity = newCart.Quantity };
+                    Cart cart = new Cart() { UserId = acc.Id, Price = product.Price, ProductId = product.Id, Quantity = request.quantity , TotalPrice = product.Price};
                     _context.Carts.Add(cart);
                 }
-        
+
                 _context.SaveChanges();
             }
             TempData["yes"] = "Thêm sản phẩm vào giỏ hàng thành công";

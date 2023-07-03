@@ -5,7 +5,9 @@ using sem3.Areas.Admin.Models;
 using sem3.Data;
 using sem3.Models;
 using System;
+using System.Linq;
 using System.Security.Principal;
+using Microsoft.AspNetCore.Http;
 
 namespace sem3.Areas.Admin.Controllers
 {

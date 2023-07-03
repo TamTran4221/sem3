@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using sem3.Data;
 using sem3.Models;
+using X.PagedList;
 
 namespace sem3.Areas.Admin.Controllers
 {
@@ -21,10 +22,13 @@ namespace sem3.Areas.Admin.Controllers
         }
 
         // GET: Admin/Order
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int page = 1)
         {
-            var applicationDbContext = _context.Orders.Include(o => o.User);
-            return View(await applicationDbContext.ToListAsync());
+            int limit = 10;
+
+            var orders = await _context.Orders.OrderBy(c => c.Id).ToPagedListAsync(page, limit);
+
+            return View(orders);
         }
 
         // GET: Admin/Order/Details/5

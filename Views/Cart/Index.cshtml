@@ -71,7 +71,7 @@
                                         <td class="product-quantity">
                                             <div class="input-counter">
                                                 <span class="minus-btn"><i data-feather="minus"></i></span>
-                                                <input type="text" min="1" value="1">
+                                                <input type="text" min="1" value="@cart.Quantity">
                                                 <span class="plus-btn"><i data-feather="plus"></i></span>
                                             </div>
                                         </td>
@@ -107,7 +107,10 @@
                             </div>
 
                             <div class="col-lg-5 col-md-5 col-sm-5 text-end">
-                                <a href="#" class="btn btn-light">Update Cart</a>
+                                 @if (@Model.Count() > 0)
+                                 {
+                                     <button class="btn btn-light">Update Cart</button>
+                                 }
                             </div>
                         </div>
                     </div>
@@ -120,7 +123,10 @@
                             <li>Shipping <span>$0</span></li>
                             <li>Total <span><b>$ @Model.Sum(x => x.TotalPrice).ToString("N")</b></span></li>
                         </ul>
-                        <a  asp-controller="Cart" asp-action="Order" class="btn btn-primary">Proceed to Checkout</a>
+                         @if (@Model.Count() > 0)
+                         {
+                             <a asp-controller="Checkout" asp-action="Index" class="btn btn-primary">Proceed to Checkout</a>
+                         }
                     </div>
                 </form>
             </div>
