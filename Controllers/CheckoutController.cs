@@ -51,7 +51,7 @@ public class CheckoutController : Controller
                 detail.Price = cart.Price;
             }
 
-            _context.OrdersDetails.Add(detail);
+            _context.OrderDetails.Add(detail);
             _context.SaveChanges();
         }
         TempData["yes"] = "Tạo đơn hàng thành công";

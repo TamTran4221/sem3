@@ -14,7 +14,7 @@ namespace sem3.Data
 		public DbSet<Blog> Blogs { get; set; }
 		public DbSet<ServiceDetail> ServicesDetails { get; set; }
 		public DbSet<Order> Orders { get; set; }
-		public DbSet<OrderDetail> OrdersDetails { get; set; }
+		public DbSet<OrderDetail> OrderDetails { get; set; }
 		public DbSet<Cart> Carts { get; set; }
 
 	}

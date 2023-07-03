@@ -147,7 +147,7 @@ namespace sem3.Controllers
                 detail.OrderId = model.Id;
                 detail.Quantity = _cart.Quantity;
                 detail.Price = _cart.Price;
-                _context.OrdersDetails.Add(detail);
+                _context.OrderDetails.Add(detail);
                 _context.SaveChanges();
             }
             TempData["yes"] = "Tạo đơn hàng thành công";
