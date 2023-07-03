@@ -1,7 +1,6 @@
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using sem3.Data;
+using sem3.Models;
 using X.PagedList;
 
 namespace sem3.Controllers
